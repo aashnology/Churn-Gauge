@@ -1,0 +1,7 @@
+{
+  "model": "XGBoost_v3",
+  "roc_auc": 0.7398471047237014,
+  "n_train": 16000,
+  "n_test": 4000,
+  "churn_rate": 0.18325
+}

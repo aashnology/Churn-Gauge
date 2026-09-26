@@ -1,0 +1,9 @@
+{
+  "model": "LogisticRegression_v2",
+  "dataset": "churn_gauge_v2_medium_9000",
+  "n_train": 6750,
+  "n_test": 2250,
+  "roc_auc": 0.7543195108984582,
+  "churn_rate_test": 0.088,
+  "missing_handling": "median / most_frequent"
+}

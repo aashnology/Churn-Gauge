@@ -1,0 +1,7 @@
+pair,H_proxy
+login_freq_30d x feature_adoption_pct,0.005757587496191263
+login_freq_30d x seat_utilization,0.024533996358513832
+feature_adoption_pct x support_tickets_30d,0.00010546536213951185
+seat_utilization x escalated_tickets_30d,0.25788912177085876
+engagement_score x tickets_per_login,0.03085583634674549
+simple_health x days_to_renewal,0.0030065570026636124

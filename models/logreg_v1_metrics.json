@@ -1,0 +1,8 @@
+{
+  "model": "LogisticRegression_v1",
+  "dataset": "churn_gauge_v1_clean_3000",
+  "n_train": 2250,
+  "n_test": 750,
+  "roc_auc": 0.7770083102493075,
+  "churn_rate_test": 0.037333333333333336
+}

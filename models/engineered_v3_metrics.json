@@ -1,0 +1,9 @@
+{
+  "logreg_auc": 0.7570416639001533,
+  "xgb_auc": 0.7397698511427893,
+  "n_features_numeric": 49,
+  "n_features_categorical": 2,
+  "n_train": 16000,
+  "n_test": 4000,
+  "previous_xgb_v3_auc_without_full_fe": 0.74
+}

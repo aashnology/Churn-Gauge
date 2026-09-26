@@ -1,0 +1,11 @@
+pair,f1,f2,range,min,max
+simple_health x escalated_tickets_30d,simple_health,escalated_tickets_30d,0.4416498839855194,0.20288333296775818,0.6445332169532776
+simple_health x days_to_renewal,simple_health,days_to_renewal,0.416288822889328,0.1977560818195343,0.6140449047088623
+util_x_adoption x support_risk_score,util_x_adoption,support_risk_score,0.18041330575942993,0.3061387538909912,0.48655205965042114
+engagement_score x tickets_per_login,engagement_score,tickets_per_login,0.16924616694450378,0.2852950394153595,0.4545412063598633
+login_freq_30d x feature_adoption_pct,login_freq_30d,feature_adoption_pct,0.11452850699424744,0.29922863841056824,0.4137571454048157
+login_freq_30d x tickets_per_login,login_freq_30d,tickets_per_login,0.11102026700973511,0.330634206533432,0.4416544735431671
+seat_utilization x escalated_tickets_30d,seat_utilization,escalated_tickets_30d,0.09391745924949646,0.3507246971130371,0.44464215636253357
+login_freq_30d x seat_utilization,login_freq_30d,seat_utilization,0.0844237208366394,0.324410080909729,0.4088338017463684
+feature_adoption_pct x support_tickets_30d,feature_adoption_pct,support_tickets_30d,0.06340897083282471,0.3440079689025879,0.4074169397354126
+near_renewal x feature_adoption_pct,near_renewal,feature_adoption_pct,0.060934990644454956,0.3449993431568146,0.40593433380126953

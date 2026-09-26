@@ -1,0 +1,9 @@
+{
+  "model": "HistGradientBoosting_v2",
+  "dataset": "churn_gauge_v2_medium_9000",
+  "n_train": 6750,
+  "n_test": 2250,
+  "roc_auc": 0.7096304172327564,
+  "churn_rate_test": 0.088,
+  "note": "XGBoost blocked by PyPI; using sklearn HistGBM as interim boosting model"
+}
