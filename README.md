@@ -4,35 +4,53 @@
 
 Upload usage data → predict churn risk → recommend concrete actions.
 
-## Current Status (Layer 1 complete)
-- Project scaffolded under `Churn Gauge/`
-- Clean synthetic dataset generated (`data/synthetic/churn_gauge_v1_clean_3000.csv`)
-- Logistic Regression baseline trained (ROC-AUC ≈ 0.78)
-- Action Catalogue defined (`docs/ACTION_CATALOGUE.md`)
-- Milestone roadmap written (`docs/MILESTONES.md`)
+## Quick start
 
-## Planned Sequence
-1. Logistic Regression (transparent coefficients) on clean data
-2. XGBoost + SHAP on progressively messier / larger data
-3. Combine interpretations for holistic view
-4. Adaptive multi-framework UI (Streamlit / Gradio / Dash) that asks user expertise and recommends host
-5. Open user CSV uploads only after quality gate
-
-## Quick Start (after later layers)
 ```bash
-# (future)
+pip install -r requirements.txt
+
+# Run a full layer (generate → train → register → quality gate)
+python -m src.pipeline.run_layer --layer 3 --skip-generate --register-production
+
+# Quality gate only
+python -m src.pipeline.run_layer --gate-only
+
+# Adaptive demo UI
 streamlit run apps/adaptive_launcher.py
 ```
 
-## Structure
+## Architecture
+
+1. **Data** – progressive synthetic generators (clean → medium → messy)
+2. **Features** – `src/features/engineer.py` + `src/pipeline/feature_spec.yaml`
+3. **Models** – LogReg → XGBoost + SHAP; artifacts in `models/` + `models/registry.json`
+4. **Quality gate** – AUC + action-usefulness + engagement sanity before user uploads
+5. **Actions** – interaction-aware recommender + action catalogue
+6. **UI** – adaptive launcher (recommends Streamlit / Gradio / Dash by expertise)
+
+## Layers
+
+| Layer | Data | Models |
+|-------|------|--------|
+| 1 | Clean 3k | LogReg |
+| 2 | Medium 9k | LogReg + XGBoost/SHAP |
+| 3 | Large messy 20k + full FE | LogReg + XGBoost, gate |
+
+## Project layout
+
 ```
 Churn Gauge/
-├── data/synthetic/     # generated datasets (v1 clean → later messier)
-├── src/data/           # generators
-├── src/models/         # training scripts
-├── src/actions/        # recommendation logic (next)
-├── src/ui/             # adaptive host decision (later)
-├── models/             # saved artifacts
-├── docs/               # milestones, action catalogue
-└── ...
+├── apps/adaptive_launcher.py
+├── data/synthetic/  data/processed/
+├── docs/  docs/runs/
+├── evaluation/  (PDP, interactions, action-usefulness)
+├── models/  (artifacts + registry.json)
+├── src/data/  src/features/  src/models/  src/actions/  src/pipeline/
+└── requirements.txt
 ```
+
+## Status
+
+- Layers 0–3 implemented
+- Quality gate: **passed** (upload enabled)
+- Production model: `xgb_v3_engineered` (see `models/registry.json`)

@@ -1,0 +1,49 @@
+# Churn Gauge – feature contract (train + serve must agree)
+version: "1.0"
+target: churned_90d
+id_column: account_id
+
+categorical:
+  - plan
+  - industry
+
+numeric_base:
+  - seats_purchased
+  - days_since_onboarding
+  - login_freq_30d
+  - seat_utilization
+  - feature_adoption_pct
+  - api_calls_daily
+  - support_tickets_30d
+  - escalated_tickets_30d
+  - nps_score
+  - csat_score
+  - days_to_renewal
+  - monthly_revenue
+
+engineered_required:
+  - api_calls_per_seat
+  - tickets_per_seat
+  - revenue_per_seat
+  - tickets_per_login
+  - escalation_rate
+  - login_freq_30d_vs_plan_median
+  - seat_utilization_vs_plan_median
+  - feature_adoption_pct_vs_plan_median
+  - near_renewal
+  - renewal_urgency
+  - is_early_life
+  - low_adoption_x_near_renewal
+  - high_tickets_x_low_util
+  - low_login_x_low_adoption
+  - util_x_adoption
+  - tickets_x_renewal_urgency
+  - engagement_score
+  - support_risk_score
+  - value_realisation
+  - simple_health
+
+quality_gate:
+  min_roc_auc: 0.72
+  min_action_usefulness: 0.85
+  require_protective_engagement: true
