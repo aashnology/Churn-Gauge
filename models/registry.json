@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "current_production": "xgb_v3_engineered",
+  "models": [
+    {
+      "model_id": "xgb_v3_engineered",
+      "path": "models/xgb_v3_engineered.joblib",
+      "model_type": "xgboost",
+      "dataset": "v3_engineered",
+      "roc_auc": 0.74,
+      "metrics": {},
+      "created_at": "2026-09-27T06:22:23Z"
+    },
+    {
+      "model_id": "logreg_v3_engineered",
+      "path": "models/logreg_v3_engineered.joblib",
+      "model_type": "logistic",
+      "dataset": "v3_engineered",
+      "roc_auc": 0.757,
+      "metrics": {},
+      "created_at": "2026-09-27T06:22:23Z"
+    },
+    {
+      "model_id": "xgb_v2_shap",
+      "path": "models/xgb_shap_v2_medium.joblib",
+      "model_type": "xgboost",
+      "dataset": "v2_medium",
+      "roc_auc": 0.709,
+      "metrics": {},
+      "created_at": "2026-09-27T06:22:23Z"
+    },
+    {
+      "model_id": "logreg_v2",
+      "path": "models/logreg_v2_medium.joblib",
+      "model_type": "logistic",
+      "dataset": "v2_medium",
+      "roc_auc": 0.754,
+      "metrics": {},
+      "created_at": "2026-09-27T06:22:23Z"
+    }
+  ]
+}

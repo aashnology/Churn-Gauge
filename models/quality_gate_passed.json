@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": [
+    {"check": "roc_auc", "value": 0.74, "threshold": 0.72, "passed": true},
+    {"check": "action_usefulness", "value": 0.94, "threshold": 0.85, "passed": true},
+    {"check": "engagement_protective", "value": 4, "threshold": 2, "passed": true}
+  ],
+  "upload_enabled": true
+}
